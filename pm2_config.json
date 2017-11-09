@@ -1,0 +1,20 @@
+{
+    "name"        : "chat_room",
+    "script"      : "./app.js",
+    "cwd"         : "./",
+    "watch": [
+      "public",
+      "app.js"
+    ],
+    "ignore_watch" : [
+      "node_modules", 
+      "logs"
+    ],
+    "watch_options": {
+      "followSymlinks": false
+    },
+    "error_file" : "./logs/app-err.log",
+    "env": {
+        "NODE_ENV": "production"  // 环境参数，当前指定为生产环境
+    }
+  }
