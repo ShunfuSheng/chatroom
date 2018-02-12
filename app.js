@@ -13,7 +13,11 @@ let users = [];
 app.use('/', express.static(__dirname + '/public'));
 
 app.get('/test', (req, res)=> {
-    console.log(req.query);
+    for(var i=0; i<100000; i++) {
+        for(var j=0; j<100000; j++) {
+            // TODO
+        }
+    }
     res.json({status: 200, msg: '请求成功'});
 });
 
