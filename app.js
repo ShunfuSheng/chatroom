@@ -13,8 +13,8 @@ let users = [];
 app.use('/', express.static(__dirname + '/public'));
 
 app.get('/test', (req, res)=> {
-    for(var i=0; i<100000; i++) {
-        for(var j=0; j<100000; j++) {
+    for(var i=0; i<1000000; i++) {
+        for(var j=0; j<1000000; j++) {
             // TODO
         }
     }
