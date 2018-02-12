@@ -13,13 +13,14 @@ let users = [];
 app.use('/', express.static(__dirname + '/public'));
 
 app.get('/test', (req, res)=> {
-    for(var i=0; i<1000000; i++) {
-        for(var j=0; j<1000000; j++) {
-            // TODO
-        }
-    }
+    sleep(10000);
     res.json({status: 200, msg: '请求成功'});
 });
+
+function sleep(n) {
+    var start=new Date().getTime();
+    while(true) if(new Date().getTime()-start>n) break;
+}
 
 // 处理ws连接
 io.on('connection', (socket)=> {
@@ -66,5 +67,5 @@ io.on('connection', (socket)=> {
 
 
 http.listen(3121, ()=> {
-    console.log('listening on *:3000');
+    console.log('listening on *:3121');
 });
