@@ -14,13 +14,8 @@ app.use('/', express.static(__dirname + '/public'));
 
 app.get('/test', (req, res)=> {
     sleep(10000);
-    res.json({status: 200, msg: '请求成功'});
+    res.json({status: 200, msg: '延迟10秒请求成功'});
 });
-
-function sleep(n) {
-    var start=new Date().getTime();
-    while(true) if(new Date().getTime()-start>n) break;
-}
 
 // 处理ws连接
 io.on('connection', (socket)=> {
@@ -64,6 +59,12 @@ io.on('connection', (socket)=> {
         }
     });
 });
+
+
+function sleep(n) {
+    var start=new Date().getTime();
+    while(true) if(new Date().getTime()-start>n) break;
+}
 
 
 http.listen(3121, ()=> {
