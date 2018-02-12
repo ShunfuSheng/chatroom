@@ -1,0 +1,7 @@
+TypeError: Cannot read property 'emit' of undefined
+    at Socket.<anonymous> (/home/sheng/chatroom/app.js:47:21)
+    at emitThree (events.js:110:13)
+    at Socket.emit (events.js:188:7)
+    at /home/sheng/chatroom/node_modules/socket.io/lib/socket.js:513:12
+    at _combinedTickCallback (internal/process/next_tick.js:67:7)
+    at process._tickDomainCallback (internal/process/next_tick.js:122:9)
