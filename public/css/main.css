@@ -163,14 +163,14 @@ footer {
     height: 50px;
     line-height: 50px;
     text-align: center;
-    font-size: 16px;
+    font-size: 15px;
     background-color: gainsboro;
     position: fixed;
-    bottom: 10px;
+    bottom: 15px;
 }
 
 footer a {
-    font-size: 16px;
-    color: #000;
+    font-size: 15px;
+    color: #333;
     text-decoration: underline;
 }
