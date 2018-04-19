@@ -57,6 +57,7 @@ app.get('/league-of-legends/v1/get_list', (req, res) => {
         num: '14.4',
         detail: '在这个星期四，IG对RNG的比赛是几乎所有loler都关注的焦点，强强对决即将上演，BLG战队的大腿上单AJ也在最近深夜的一次直播中发表了对这两个队伍的看法。'
     }];
+    res.json({ status: 200, data });
 });
 
 // 处理ws连接
