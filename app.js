@@ -66,6 +66,30 @@ app.get('/league-of-legends/v1/get_list', (req, res) => {
     res.json({ status: 200, data });
 });
 
+app.get('/league-of-legends/v1/get_comment', (req, res) => {
+    const data = [{
+        name: '夜听雨',
+        gender: 'man',
+        level: '白金II',
+        lastLogin: '4小时前',
+        content: '又帮我徒弟上了个钻石，有想学小丑的可以加我QQ543064278 收徒不要钱的^_^'
+    }, {
+        name: '烬夫人',
+        gender: 'woman',
+        level: '白银Ⅲ',
+        lastLogin: '6小时前',
+        content: '这两天迷上了剑圣，玉剑传说的皮肤是真的好看，不会打野，不会抓人，队友已经被我气到猝死！我觉得我还是挺厉害的。'
+    }, {
+        name: '过客天邪',
+        gender: 'man',
+        level: '超凡大师',
+        lastLogin: '8小时前',
+        content: '跟大家说个事，我准备脱坑了，这个月31号！我将打上王者，没错是王者！立贴为誓'
+    }];
+    res.json({ status: 200, data });
+});
+
+
 // 处理ws连接
 io.on('connection', (socket) => {
     socket.emit('initial', users);
