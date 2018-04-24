@@ -21,7 +21,7 @@ app.get('/test', (req, res) => {
 // 自定义数据接口
 app.get('/league-of-legends/v1/get_list', (req, res) => {
     const data = [{
-        key: '0',
+        id: '0',
         title: '英雄谱：卢兮夜单杀Faker惊世人 把团队抗在肩上的少年',
         author: '腾讯体育',
         date: '04-19 10:50',
