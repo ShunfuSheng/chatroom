@@ -20,7 +20,7 @@ app.get('/test', (req, res) => {
 });
 
 // 自定义数据接口
-app.get('/league-of-legends/v1/get_list', (req, res) => {
+app.get('/api/league-of-legends/v1/get_list', (req, res) => {
     const page = req.query.page,
         offset = 5;
     fs.readFile('./public/data.json', (err, data) => {
@@ -36,7 +36,7 @@ app.get('/league-of-legends/v1/get_list', (req, res) => {
     });
 });
 
-app.get('/league-of-legends/v1/get_comment', (req, res) => {
+app.get('/api/league-of-legends/v1/get_comment', (req, res) => {
     const data = [{
         id: '0',
         name: '夜听雨',
