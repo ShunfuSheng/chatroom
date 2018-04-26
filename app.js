@@ -22,8 +22,8 @@ app.get('/test', (req, res) => {
 // 自定义数据接口
 app.get('/api/league-of-legends/v1/get_list', (req, res) => {
     const page = req.query.page || 0,
-        offset = 5,
-        isEnd = false;
+        offset = 5;
+    let isEnd = false;
     fs.readFile('./public/data.json', (err, buff) => {
         if(err) {
             throw err;
