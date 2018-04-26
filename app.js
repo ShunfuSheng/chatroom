@@ -29,7 +29,7 @@ app.get('/api/league-of-legends/v1/get_list', (req, res) => {
         } else {
             const arr = JSON.parse(buff.toString());
             const start = page*offset;
-            const end = start + offset + 1;
+            const end = start + offset;
             const data = arr.slice(start, end);
             res.json({ status: 200, data });
         }
