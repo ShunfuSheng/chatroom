@@ -22,7 +22,8 @@ app.get('/test', (req, res) => {
 // 自定义数据接口
 app.get('/api/league-of-legends/v1/get_list', (req, res) => {
     const page = req.query.page || 0,
-        offset = 5;
+        offset = 5,
+        isEnd = false;
     fs.readFile('./public/data.json', (err, buff) => {
         if(err) {
             throw err;
@@ -30,8 +31,9 @@ app.get('/api/league-of-legends/v1/get_list', (req, res) => {
             const arr = JSON.parse(buff.toString());
             const start = page*offset;
             const end = start + offset;
+            isEnd = end >= arr.length-1 ? true : false;
             const data = arr.slice(start, end);
-            res.json({ status: 200, data });
+            res.json({ status: 200, data, isEnd });
         }
     });
 });
