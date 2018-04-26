@@ -23,11 +23,11 @@ app.get('/test', (req, res) => {
 app.get('/api/league-of-legends/v1/get_list', (req, res) => {
     const page = req.query.page || 0,
         offset = 5;
-    fs.readFile('./public/data.json', (err, data) => {
+    fs.readFile('./public/data.json', (err, buff) => {
         if(err) {
             throw err;
         } else {
-            const arr = JSON.parse(data.toString());
+            const arr = JSON.parse(buff.toString());
             const start = page*offset;
             const end = start + offset + 1;
             const data = arr.slice(start, end);
